@@ -1,16 +1,24 @@
+import { displaySuccess } from './displaySuccess';
+import { formChecker } from './formChecker';
 function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+    let formText = document.getElementById('article').value;
+    const success = formChecker(formText);
+    if (success){
+        fetch('http://localhost:8081/api')
+        .then(res => {
+            displaySuccess();
+            return res.json();
+        }, err => console.log(err))
+        .then(function(res) {
+            console.log(res);
+            document.querySelector('.result__response').innerHTML = res.message;
+        } , err => console.log(err));
+    }
 }
 
-export { handleSubmit }
+document.querySelector('.form').addEventListener('submit',handleSubmit);
+
+export { handleSubmit };

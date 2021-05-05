@@ -1,0 +1,13 @@
+.result{
+    width: 80%;
+    margin:0 auto;
+    &__title{
+        font-size:1.2rem;
+        font-weight: 400;
+        margin: 15px 0;
+    }
+    &__response{
+        font-size:1.1rem;
+        margin-bottom:60px
+    }
+}

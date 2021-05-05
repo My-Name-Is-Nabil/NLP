@@ -3,36 +3,38 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap" rel="stylesheet"> 
     </head>
 
     <body>
-
-        <header>
-            <div class="">
-                Logo
+        <header class="header">
+            <div class="header__logo">
+                Nlp your article
             </div>
-            <div class="">
-                navigation
+            <div class="header__intro">
+                Process your article seemelessly using an advanced nlp processer, just send us the article and you'll get the response immidietaly!
             </div>
         </header>
 
         <main>
             <section>
-                <form class="" onsubmit="handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit">
+                <form class="form">
+                    <label for="name"> Enter your article</label>
+                    <br>
+                    <textarea id="article" type="text" name="article" placeholder="Your article here"></textarea>
+                    <br>
+                    <div class="form__error-message"> The input is too short, input must be more than 15 charachters</div>
+                    <button class="form__submit" type="submit"> Submit</button>
                 </form>
             </section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section class="result"> 
+                <h2 class="result__title"> Form Results</h2>
+                <div class="result__response"> Your results will show up here!</div>
             </section>
         </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
 
     </body>
 </html>

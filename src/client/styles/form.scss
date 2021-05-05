@@ -1,12 +1,66 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+@import 'config';
+.form{
+    width:80%;
+    margin:0 auto;
+    padding-top: 40px;
+    label{
+        font-size:1.2rem;
+        font-weight: 400;
+    }
+    &__error-message{
+        max-width: 250px;
+        width: 40%;
+        background-color: red;
+        margin:0 auto;
+        margin-bottom:10px;
+        border-radius: 6px;
+        text-align: center;
+        font-size:0.9rem;
+        max-height: 0;
+        padding:0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out, padding 0.2s ease-in-out;
+        &.show{
+            max-height: 500px;
+            padding:5px 0;
+        }        
+    }
+    &__submit{
+        background-color: $secondary-color;
+        color:$primary-color;
+        width:130px;
+        height: 30px;
+        cursor: pointer;
+        margin-left: calc(50% - 65px);
+        margin-bottom:50px;
+        border:none;
+        border-radius:5px;
+        transition: 0.2s background-color ease-in-out,0.2s background-color ease-in-out;
+        &:hover{
+            background-color: $primary-color;
+            color:$secondary-color;
+        }
+    }
+    @at-root #article{
+        display: block;
+        width:100%;
+        margin:0 auto;
+        padding:1em;
+        height: 12vw;
+        resize: none;
+        margin-top: 15px;
+        font-family: $font-family, sans-serif;
+        outline:none;
+        &.error{
+            border:1px red solid;
+        }
+        &.success{
+            border:1px green solid;
+        }
+    }
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+
+::placeholder{
+    opacity: 0.4;
 }
