@@ -1,5 +1,6 @@
 import { displaySuccess } from './displaySuccess';
 import { formChecker } from './formChecker';
+import { handleResponse } from './handleResponse';
 function handleSubmit(event) {
     event.preventDefault();
     // check what text was put into the form field
@@ -17,14 +18,20 @@ function handleSubmit(event) {
                 'processor': processor
             })
         })
-        .then(res => res.json() , err => console.log(err))
+        .then(res => res.json() , err => {
+            console.log(err);
+            document.querySelector('.result__response').innerHTML = 'Error retrieving response, try again later';
+        })
         .then(function(res) {
             console.log(res);
             if (res.status.code == 0 ){
                 displaySuccess();
+                handleResponse(res);
             }
-            document.querySelector('.result__response').innerHTML = res.message;
-        } , err => console.log(err));
+        } , err =>{
+            console.log(err);
+            document.querySelector('.result__response').innerHTML = 'Error retrieving response, try again later';
+        });
     }
 }
 

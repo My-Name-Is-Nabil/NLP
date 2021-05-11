@@ -1,6 +1,7 @@
 import { formChecker} from './js/formChecker';
 import { handleSubmit } from './js/formHandler';
 import { displaySuccess } from './js/displaySuccess';
+import { handleResponse } from './js/handleResponse';
 import "./styles/base.scss";
 import "./styles/footer.scss";
 import "./styles/form.scss";
