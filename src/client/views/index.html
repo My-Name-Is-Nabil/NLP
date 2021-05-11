@@ -20,10 +20,17 @@
         <main>
             <section>
                 <form class="form">
-                    <label for="name"> Enter your article</label>
+                    <label for="article"> Enter your article</label>
                     <br>
                     <textarea id="article" type="text" name="article" placeholder="Your article here"></textarea>
                     <br>
+                    <label for="processers"> Choose Your Processor</label>
+                    <br>
+                    <select name="processer" id="processers">
+                        <option value="sentiment-analysis">Sentiment Analysis</option>
+                        <option value="topic-extraction">Topic Extraction</option>
+                        <option value="summarization">Summarization</option>
+                      </select>
                     <div class="form__error-message"> The input is too short, input must be more than 15 charachters</div>
                     <button class="form__submit" type="submit"> Submit</button>
                 </form>
