@@ -20,10 +20,10 @@ function handleResponse(response){
         }
         entityList = entityList.join(', ');
         let conceptList = [];
-        for(let i=0;i<response.entity_list.length;i++){
+        for(let i=0;i<response.concept_list.length;i++){
             conceptList.push(response.concept_list[i].form);
         }
-        conceptList = conceptList.join(' ');
+        conceptList = conceptList.join(', ');
         const innerHTML = `Entity list: ${entityList}<br>Concept list: ${conceptList}`;
         document.querySelector('.result__response').innerHTML = innerHTML;
         return innerHTML;

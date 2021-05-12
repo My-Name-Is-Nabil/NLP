@@ -5,7 +5,7 @@ function handleSubmit(event) {
     event.preventDefault();
     // check what text was put into the form field
     let article = document.getElementById('article').value;
-    let processor = document.getElementById('processers').value;
+    let processor = document.getElementById('processors').value;
     const success = formChecker(article);
     if (success){
         fetch('http://localhost:8081/api', {

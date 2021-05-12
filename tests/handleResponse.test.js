@@ -1,4 +1,7 @@
-const {handleResponse} = require('../src/client/js/handleResponse');
+document.body.innerHTML = `
+<div class="result__response"></div>
+`;
+const { handleResponse } = require('../src/client/js/handleResponse');
 const axios = require('axios');
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
@@ -14,10 +17,7 @@ const data =  {
 }
 
 test('Testing response handler', () => {
-    document.body.innerHTML = `
-        <div class="result__response"></div>
-    `;
     expect(handleResponse(data)).toMatch(/^Summary: /);
     expect(handleResponse(data)).toBe(document.querySelector('.result__response').innerHTML);
-    expect(() => handleResponse()).toThrow();
+    expect(() => handleResponse(data)).not.toThrow();
 })

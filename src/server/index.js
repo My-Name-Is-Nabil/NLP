@@ -1,6 +1,5 @@
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
 const cors = require('cors');
 const app = express()
 const axios = require('axios');
@@ -10,8 +9,6 @@ app.use(express.static('dist'))
 app.use(cors());
 app.use(express.json());
 const API_KEY = process.env.API_KEY;
-
-console.log(API_KEY);
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
